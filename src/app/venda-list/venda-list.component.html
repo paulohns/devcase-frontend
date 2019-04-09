@@ -1,0 +1,12 @@
+<mat-card>
+  <mat-card-title>Vendas</mat-card-title>
+  <mat-card-content>
+    <mat-list>
+      <mat-list-item *ngFor="let venda of vendas">
+        <h3 mat-line>Data: {{venda.dataVenda | date}}</h3>
+        <h3 mat-line>Valor: {{venda.valorVenda | currency:'R$'}}</h3>
+      </mat-list-item>
+    </mat-list>
+  </mat-card-content>
+  <button mat-fab color="primary" [routerLink]="['/venda-add']">Add</button>
+</mat-card>
