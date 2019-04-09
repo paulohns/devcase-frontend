@@ -49,7 +49,7 @@ export class VendaEditComponent implements OnInit {
   }
 
   gotoList() {
-    this.router.navigate(['/car-list']);
+    this.router.navigate(['/venda-list']);
   }
 
   save(form: NgForm) {

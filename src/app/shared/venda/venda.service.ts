@@ -28,12 +28,12 @@ export class VendaService {
     return this.http.get(this.VENDA_LIST_API + '/' + id);
   }
 
-  getFiltroSexo(sexo: string) {
+  getFiltroSexo(sexo: string): Observable<any> {
     return this.http.get(this.LIST_FILTRO_SEXO_API + '/' + sexo);
   }
 
-  getFiltroData(sexo: string) {
-    return this.http.get(this.LIST_FILTRO_SEXO_API + '/' + sexo);
+  getFiltroData(dataInicial: string, dataFinal: string): Observable<any>{
+    return this.http.get(this.LIST_FILTRO_DATA_API + '?' + 'dataInicial=' + dataInicial + '&dataFinal=' + dataFinal);
   }
 
   save(venda: any): Observable<any> {

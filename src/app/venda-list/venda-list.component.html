@@ -1,8 +1,20 @@
 <mat-card>
+  <mat-card-content>
+      <mat-form-field>
+        <input matInput placeholder="Data Inicial" [(ngModel)]="dataInicial"
+                required name="dataInicial">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Data Final" [(ngModel)]="dataFinal"
+                required name="dataFinal">
+      </mat-form-field>
+      <button mat-fab color="primary" (click)="filtrar()">Filtrar</button>
+  </mat-card-content>
   <mat-card-title>Vendas</mat-card-title>
   <mat-card-content>
     <mat-list>
       <mat-list-item *ngFor="let venda of vendas">
+        <h3 mat-line>Cliente: {{venda.cliente.nome}}</h3>
         <h3 mat-line>Data: {{venda.dataVenda | date}}</h3>
         <h3 mat-line>Valor: {{venda.valorVenda | currency:'R$'}}</h3>
       </mat-list-item>
